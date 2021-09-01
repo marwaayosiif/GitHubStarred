@@ -1,0 +1,121 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+  body {
+    background-color: #2d3436;
+    color: #dfe6e9;
+  }
+  p {
+    margin: 0;
+  }
+  .title {
+    text-align: center; 
+    font-style: italic; 
+    color: black;
+  }
+  .buttonStyle{
+    font-size:24px ; 
+    background-color: transparent; 
+    border: transparent;
+  }
+  .RowStyle{
+    align-items: center; 
+    justify-content: center;
+  }
+  .Row {
+    /* display: table; */
+    width: 100%;/* Optional*/
+    height: 100%;
+    table-layout: auto; /*Optional*/
+    border-spacing: 10px;
+    border-color: black;
+    border-style:dashed;
+  }
+  .Column {
+    display: table-cell;
+  }
+
+  #left-bar {
+    width: 5%;
+    vertical-align:middle;
+    align-items: baseline;
+  }
+  #middle-bar {
+    width: 5%;
+    vertical-align: middle;
+    align-items: baseline;
+  }
+  #right-bar {
+    width: 60%;
+    vertical-align: middle;
+    align-items: baseline;
+  }
+ 
+  .content {
+    display: flex;
+    padding: 0 16px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure {
+  border: 2px #0c0c0c solid;
+  align-self:center;
+  }
+  figcaption {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-style: italic;
+    font-size: medium;
+    /* padding: 2px; */
+    text-align: center;
+  }
+
+.textUser {
+  resize: none; 
+  text-align:initial; 
+  font-style: oblique;
+  line-height:40px;
+  font-size:large;
+  transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);  
+  height: calc(2.75rem + 2px);  
+  border: 1px solid #cad1d7;
+  border-radius: .375rem;
+  background-color: rgb(31, 30, 30);
+  background-clip: padding-box; 
+  display: block;color: white;
+}
+.form-control {
+  background-color: rgb(31, 30, 30);
+  
+  font-size: 1rem;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  height: calc(2.75rem + 2px);
+  /* padding: .625rem .75rem; */
+  transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);
+  /* color: #8898aa; */
+  border: 1px solid #cad1d7;
+  border-radius: .375rem;
+  /* background-color: #fff; */
+  background-clip: padding-box;
+  box-shadow: none;
+  color: white;
+  }

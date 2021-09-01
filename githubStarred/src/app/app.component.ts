@@ -1,7 +1,5 @@
 import { Component , OnInit} from '@angular/core';
 import { HttpClient} from '@angular/common/http'
-import { jsDocComment } from '@angular/compiler';
-import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +8,21 @@ import { combineLatest } from 'rxjs';
 })
 
 export class AppComponent implements OnInit{
-  title = 'githubStarred';
+// some declaration for some variables  
   Github:Github = new Github();
   Item:Item=new Item();
   list:Item[] = [new Item()];
+  counter:number=1;
+  url:string='https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc&page=';
 
   constructor(public http:HttpClient){}
-  
+// function to get the data of the first page   
   ngOnInit(){
-    this.http.get('https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc&page=2')
+    this.http.get(`${this.url}${this.counter}`)
     .subscribe(res=> { this.Github = res as Github
       this.list = this.Github.items })
   }
+// function that make the search bar works  
   Search(event:any){
     var SearchName : string ="";
     SearchName =event.target.value
@@ -34,8 +35,22 @@ export class AppComponent implements OnInit{
       this.ngOnInit()
     }
   }
+// function to bring the pervious page
+  Left(){
+    if (this.counter != 1){
+      this.counter = this.counter-1
+    }
+    this.ngOnInit()
+  }
+// function to bring the next page
+  Right(){
+    this.counter = this.counter + 1
+    this.ngOnInit()
+  }
+
 }
 
+// the Models Need to take the data
 
   class Github {
     total_counts : number = 0;
