@@ -16,10 +16,7 @@
   h6 {
     margin: 8px 0;
   }
-  body {
-    background-color: #2d3436;
-    color: #dfe6e9;
-  }
+ 
   p {
     margin: 0;
   }
@@ -38,13 +35,14 @@
     justify-content: center;
   }
   .Row {
-    /* display: table; */
-    width: 100%;/* Optional*/
-    height: 100%;
-    table-layout: auto; /*Optional*/
+    display:block;
+    align-items: center; 
+    justify-content: center;
+    table-layout:auto;
     border-spacing: 10px;
-    border-color: black;
-    border-style:dashed;
+    border-color: rgb(180, 178, 178);
+    border-style:solid;
+    border-radius: 15px;
   }
   .Column {
     display: table-cell;
@@ -75,7 +73,6 @@
   }
 
   figure {
-  border: 2px #0c0c0c solid;
   align-self:center;
   }
   figcaption {
@@ -83,7 +80,6 @@
     color: white;
     font-style: italic;
     font-size: medium;
-    /* padding: 2px; */
     text-align: center;
   }
 
@@ -95,27 +91,24 @@
   font-size:large;
   transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);  
   height: calc(2.75rem + 2px);  
-  border: 1px solid #cad1d7;
+  border: 1px solid #323333;
   border-radius: .375rem;
-  background-color: rgb(31, 30, 30);
+  background-color: rgb(255, 255, 255);
   background-clip: padding-box; 
-  display: block;color: white;
+  display: block;
+  color: rgb(65, 63, 63);
 }
 .form-control {
-  background-color: rgb(31, 30, 30);
-  
   font-size: 1rem;
   line-height: 1.5;
   display: block;
   width: 100%;
   height: calc(2.75rem + 2px);
-  /* padding: .625rem .75rem; */
   transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);
-  /* color: #8898aa; */
-  border: 1px solid #cad1d7;
+  border: 1px solid #323333;
   border-radius: .375rem;
-  /* background-color: #fff; */
+  background-color: rgb(255, 255, 255);
   background-clip: padding-box;
   box-shadow: none;
-  color: white;
+  color: rgb(65, 63, 63);
   }

@@ -12,8 +12,12 @@
       </div>
       <div class="Row" >
         <div class="Column" id = "left-bar">
-          <button (click)= "Left()" class="buttonStyle"><i class="	fa fa-chevron-circle-left"></i></button>
-          <button (click) = "Right()" class="buttonStyle"><i class="	fa fa-chevron-circle-right"></i></button>
+          <div class="Column">
+            <button (click)= "Left()" class="buttonStyle"><i class="	fa fa-chevron-circle-left"></i></button>
+          </div>
+          <div class="Column">
+            <button (click) = "Right()" class="buttonStyle"><i class="	fa fa-chevron-circle-right"></i></button>
+          </div>
         </div>
         <div class="Column" id = "right-bar">
           <input class="form-control" placeholder="Search" type="text" name="SearchName" (keyup)="Search($event)"> 
@@ -23,7 +27,7 @@
         </div>
       </div>
       <tbody *ngFor = "let pd of list ;let i = index">
-        <div class="RowStyle" class="Row">
+        <div class="Row" class="Row">
           <div class = "Column" id = "left-bar">
             {{i+1}}-
           </div>
