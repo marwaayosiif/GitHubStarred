@@ -124,9 +124,9 @@
 
   .content {
     display: flex;
-    margin: 82px auto 32px;
+    /* margin: 82px auto 32px; */
     padding: 0 16px;
-    max-width: 960px;
+    max-width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -341,6 +341,21 @@
   object-fit:contain;
   
 }
+.form-control {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    height: calc(2.75rem + 2px);
+    padding: .625rem .75rem;
+    transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);
+    color: #8898aa;
+    border: 1px solid #cad1d7;
+    border-radius: .375rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: none;
+  }
 
 figcaption {
   background-color: rgb(65, 63, 63);
@@ -382,7 +397,7 @@ figcaption {
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<!-- <div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
@@ -390,6 +405,7 @@ figcaption {
   />
   <span>Welcome</span>
     <div class="spacer"></div>
+    
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
         <rect width="400" height="400" fill="none"/>
@@ -402,7 +418,7 @@ figcaption {
         <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
       </svg>
     </a>
-</div>
+</div> -->
 
 <div class="content" role="main">
 
@@ -467,6 +483,9 @@ figcaption {
     </a>
 
   </div> -->
+  
+  <input class="form-control" placeholder="Search" type="text" name="SearchName" (keyup)="Search($event)"
+                  >
 
   <div>
     <tbody *ngFor = "let pd of list ;let i = index">
@@ -483,11 +502,11 @@ figcaption {
         </div>
         <div  class = "Column"id = "right-bar">
           <div  id ="upper-bar">
-            <h1>Repository Name: {{pd.name}}</h1>
+            <h1>{{pd.name}}</h1>
             
           </div>
           <div id = "middler-bar">
-            <h2>Description: {{pd.description}}</h2>
+            <h2>{{pd.description}}</h2>
           </div>
           <div id = "lower-bar">
             <h3><textarea style="resize: none; text-align:center; font-style: oblique; font-size:large; ">Stars: {{pd.stargazers_count}}</textarea>     <textarea style="resize: none; text-align: center; font-size:large;"  >Issues: {{pd.open_issues_count}}</textarea>   </h3>

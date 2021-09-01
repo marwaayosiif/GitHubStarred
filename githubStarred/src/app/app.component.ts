@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { jsDocComment } from '@angular/compiler';
 import { combineLatest } from 'rxjs';
@@ -9,18 +9,33 @@ import { combineLatest } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'githubStarred';
+  Github:Github = new Github();
+  Item:Item=new Item();
+  list:Item[] = [new Item()];
+
+  constructor(public http:HttpClient){}
   
-  constructor(public http:HttpClient){
+  ngOnInit(){
     this.http.get('https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc&page=2')
     .subscribe(res=> { this.Github = res as Github
       this.list = this.Github.items })
   }
-  Github:Github = new Github();
-  Item:Item=new Item();
-  list:Item[] = [new Item()];
+  Search(event:any){
+    var SearchName : string ="";
+    SearchName =event.target.value
+    if(SearchName != ""){
+      this.list = this.list.filter(res =>{
+        return res.name.toLocaleLowerCase().match(SearchName.toLocaleLowerCase());
+      });
+    }
+    else if(SearchName == ""){
+      this.ngOnInit()
+    }
+  }
 }
+
 
   class Github {
     total_counts : number = 0;
